@@ -1,0 +1,110 @@
+---
+title: Solicitação de Acesso Interno
+description: Fluxo simplificado de compartilhamento de dados entre secretarias
+icon: "handshake"
+---
+
+Guia para órgãos da Prefeitura do Rio de Janeiro que necessitam acessar dados do Data Lake gerenciado pela IplanRio.
+
+**Órgão solicitante**: Qualquer secretaria ou departamento municipal que precise acessar dados controlados por outro órgão da Prefeitura.
+
+---
+
+## Passo 1: Contato com o Órgão Controlador
+
+**Responsável**: Gestor da secretaria solicitante
+
+O órgão solicitante entra em contato direto com o órgão controlador dos dados desejados através de:
+
+- **Email**: Comunicação direta com setor de dados da secretaria controladora, ou;
+- **SEI**: Processo formal dentro do sistema de protocolo municipal
+
+Nesta comunicação, informe:
+- Dados solicitados (conforme [catálogo público](https://www.dados.rio/datalake) ou próprio da secretaria)
+- Justificativa técnica/operacional
+- Responsável pelo acesso
+- Prazo de necessidade
+
+---
+
+## Passo 2: Aprovação e Notificação à IplanRio
+
+**Responsável**: Órgão controlador dos dados
+
+Se o pedido for aprovado, o órgão controlador envia email para **ed.iplanrio@prefeitura.rio** com as seguintes informações:
+
+**Assunto do email**: `Solicitação de Acesso ao Data Lake - [Secretaria Solicitante]`
+
+**Conteúdo obrigatório**:
+
+- **Nome do solicitante**: Nome completo do responsável pelo acesso
+- **Email do solicitante**: Email corporativo da Prefeitura para contato
+- **Conjunto(s) de dados**: Lista das tabelas e/ou do(s) conjunto(s) de dados
+- **Nível de acesso**: 
+  - `Leitura`: Apenas consulta de dados
+  - `Escrita`: Permissão para criar/modificar dados
+- **Prazo de acesso**: Data início e data fim da necessidade de acesso
+
+**Exemplo**:
+
+```
+Assunto: Solicitação de Acesso ao Data Lake - SMS
+
+Prezados,
+
+Solicitamos a liberação de acesso ao Data Lake conforme detalhes abaixo:
+
+Nome do Solicitante: Fulana da Silva
+Email: fulana.silva@saude.rio
+Conjunto(s) de Dados: mobilidade.viagens, mobilidade.passageiros
+Nível de Acesso: Leitura
+Prazo: 01/09/2024 a 31/12/2024
+
+A SMS necessita acessar dados de mobilidade para análise de deslocamento a unidades de saúde.
+
+Atenciosamente,
+[Nome e assinatura do órgão controlador]
+```
+
+---
+
+## Passo 3: Liberação de Acesso
+
+**Responsável**: Equipe gestora do Data Lake (IplanRio)
+
+Após receber o email, a IplanRio realiza a liberação do acesso e envia por email as orientações de uso para o(a) solicitante.
+
+---
+
+## Passo 4: Monitoramento pela IplanRio
+
+Responsável: Equipe gestora do Data Lake (IplanRio) — contínuo
+
+A IplanRio monitora continuamente o acesso e executa as seguintes ações:
+
+| Situação | Ação IplanRio | Prazo |
+|----------|---------------|-------|
+| **15 dias antes do vencimento** | Avisa o órgão controlador via email | — |
+| **Acesso sem resposta ao aviso** | Encerra o acesso no vencimento | Automático |
+| **30 dias de inatividade** | Avisa o órgão controlador via email | — |
+| **Sem resposta ao aviso de inatividade** | Cancela o acesso | 10 dias úteis |
+| **Suspeita de uso irregular** | Cancela o acesso imediatamente | Imediato |
+
+---
+
+## Informações Adicionais
+
+### Dados Sensíveis e LGPD
+
+Durante o acesso ao Data Lake, respeite as regulamentações de proteção de dados:
+
+- Não exporte dados pessoais identificáveis (PII) desnecessariamente
+- Use funções de hash para dados sensíveis quando necessário
+- Respeite as políticas de LGPD da Prefeitura do Rio
+- A IplanRio audita todos os acessos ao Data Lake
+
+### Suporte
+
+Para dúvidas sobre o processo de solicitação ou acesso, contate:
+- **IplanRio**: ed.iplanrio@prefeitura.rio
+- **Órgão controlador**: Verificar setor de dados da secretaria responsável pelos dados
